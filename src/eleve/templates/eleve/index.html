@@ -1,0 +1,74 @@
+{% extends  "eleve/layout/base.html"%}
+
+{% block title%}
+Liste des élèves
+{%endblock%}
+    
+{% block content%}
+<main>
+    <div class="recent-orders" id="dashboard">
+        <div class="header">
+            <h2>Elèves (2)</h2>
+            <a href="{% url 'eleve:add' %}" class="new-student-btn">+ Nouvel élève</a>   
+        </div>
+        
+        <table id="MyTable" class="tab">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prènom</th>
+                    <th>Genre</th>
+                    <th>Classe</th>
+                    <th>Matricule</th>
+                    <th>Age</th>
+                    <th>Télephone</th>
+                    <th>Ville</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Koffi</td>
+                    <td>George</td>
+                    <td>M</td>
+                    <td>Tle</td>
+                    <td>GDJ7GDGD</td>
+                    <td>25</td>
+                    <td>0712345678</td>
+                    <td>Bonoua</td>
+                    <td >
+                        <a href="{% url 'eleve:update'%}"><button class="btn edit">Modifier</button></a>
+                        <button id="deleteButton" class="btn delete">Supprimer</button> 
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>KONÉ</td>
+                    <td>Sali</td>
+                    <td>F</td>
+                    <td>2nd</td>
+                    <td>GDJ7GDGD</td>
+                    <td>22</td>
+                    <td>0712345678</td>
+                    <td>Abidjan</td>
+                    <td >
+                        <a href="{% url 'eleve:update'%}"><button class="btn edit">Modifier</button></a>
+
+                        <button id="deleteButton" class="btn delete">Supprimer</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="alert">
+        <p>ATTENTION !!</p>
+        <p>Voulez-vous vraiment supprimer cet éleve?</p>
+        <button id="confirmDelete">Oui</button>
+        <button id="cancelDelete">Non</button>
+    </div>
+</main>
+    
+{% endblock%}
+            
